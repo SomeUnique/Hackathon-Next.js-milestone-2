@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Resume</title>
+  <!-- Tailwind CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 font-sans">
+
+  <div class="max-w-3xl mx-auto p-6 bg-white shadow-md rounded-md">
+    <div class="flex flex-col items-center">
+      <img id="resumeImage" src="" alt="Profile Picture" class="w-24 h-24 rounded-full mb-4" />
+
+      <header class="text-center">
+        <h1 id="resumeName" class="text-2xl font-bold text-gray-800">Your Name</h1>
+        <h3 id="resumeTitle" class="text-lg text-gray-600 mt-1">Your Job Title</h3>
+      </header>
+
+      <section class="text-center mt-4 text-gray-700">
+        <p>Email: <span id="resumeEmail">Your Email</span></p>
+        <p>Phone: <span id="resumePhone">Your Phone</span></p>
+        <p>Location: <span id="resumeLocation">Your Location</span></p>
+      </section>
+    </div>
+
+    <section class="mt-6">
+      <h2 class="text-xl font-semibold text-gray-800 border-b pb-2">Education</h2>
+      <p id="resumeEducation" class="mt-2 text-gray-700">Your Education</p>
+    </section>
+
+    <section class="mt-6">
+      <h2 class="text-xl font-semibold text-gray-800 border-b pb-2">Experience</h2>
+      <p id="resumeExperience" class="mt-2 text-gray-700">Your Experience</p>
+    </section>
+
+    <section class="mt-6">
+      <h2 class="text-xl font-semibold text-gray-800 border-b pb-2">Skills</h2>
+      <ul id="resumeSkills" class="list-disc list-inside mt-2 text-gray-700"></ul>
+      <button id="toggleSkillsBtn" class="mt-3 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Hide Skills</button>
+    </section>
+
+    <section class="mt-6">
+      <h2 class="text-xl font-semibold text-gray-800 border-b pb-2">Links</h2>
+      <div id="resumeLinks" class="mt-2 text-blue-500 underline"></div>
+    </section>
+
+    <button id="editResumeBtn" class="mt-6 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">Edit Resume</button>
+
+    <!-- Modal for Editing Resume -->
+    <div id="editModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center hidden">
+      <div class="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
+        <span class="close text-gray-500 hover:text-gray-700 cursor-pointer float-right">&times;</span>
+        <h2 class="text-xl font-semibold text-gray-800 mb-4">Edit Resume</h2>
+
+        <!-- Input fields for all sections -->
+        <label for="editName" class="block text-gray-600">Name</label>
+        <input type="text" id="editName" placeholder="Enter your name" class="w-full border rounded p-2 mb-3">
+
+        <label for="editTitle" class="block text-gray-600">Job Title</label>
+        <input type="text" id="editTitle" placeholder="Enter your job title" class="w-full border rounded p-2 mb-3">
+
+        <label for="editEmail" class="block text-gray-600">Email</label>
+        <input type="email" id="editEmail" placeholder="Enter your email" class="w-full border rounded p-2 mb-3">
+
+        <label for="editPhone" class="block text-gray-600">Phone</label>
+        <input type="text" id="editPhone" placeholder="Enter your phone number" class="w-full border rounded p-2 mb-3">
+
+        <label for="editLocation" class="block text-gray-600">Location</label>
+        <input type="text" id="editLocation" placeholder="Enter your location" class="w-full border rounded p-2 mb-3">
+
+        <label for="editEducation" class="block text-gray-600">Education</label>
+        <textarea id="editEducation" placeholder="Describe your education" class="w-full border rounded p-2 mb-3"></textarea>
+
+        <label for="editExperience" class="block text-gray-600">Experience</label>
+        <textarea id="editExperience" placeholder="Describe your work experience" class="w-full border rounded p-2 mb-3"></textarea>
+
+        <label for="editSkills" class="block text-gray-600">Skills (comma-separated)</label>
+        <input type="text" id="editSkills" placeholder="e.g., JavaScript, Python, Web Development" class="w-full border rounded p-2 mb-3">
+
+        <label for="editLinks" class="block text-gray-600">Links (comma-separated)</label>
+        <input type="text" id="editLinks" placeholder="e.g., LinkedIn URL, GitHub URL" class="w-full border rounded p-2 mb-3">
+
+        <button id="saveResumeBtn" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 w-full">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="resume.js"></script>
+</body>
+</html>
